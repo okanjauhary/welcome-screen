@@ -18,7 +18,10 @@ const config = {
     filename: "[name].js"
   },
   resolve: {
-    extensions: [".js", ".vue"]
+    extensions: [".js", ".vue"],
+    alias: {
+      "@": path.resolve(__dirname, "src/")
+    }
   },
   module: {
     rules: [
