@@ -1,0 +1,13 @@
+{
+  "name": "Welcome Screen",
+  "description": "",
+  "version": null,
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "chrome_url_overrides": {
+    "newtab": "page/index.html"
+  }
+}
