@@ -10,6 +10,8 @@
     "watch:dev": "cross-env HMR=true yarn build:dev -- --watch"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "dotenv-webpack": "^1.7.0",
     "vue": "^2.6.10",
     "webextension-polyfill": "^0.6.0"
   },

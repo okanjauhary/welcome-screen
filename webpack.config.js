@@ -1,10 +1,12 @@
 const webpack = require("webpack");
+const path = require("path");
 // const ejs = require('ejs');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const ExtensionReloader = require("webpack-extension-reloader");
 const { VueLoaderPlugin } = require("vue-loader");
 const { version, description } = require("./package.json");
+const Dotenv = require("dotenv-webpack");
 
 const config = {
   mode: process.env.NODE_ENV,
@@ -71,6 +73,7 @@ const config = {
     ]
   },
   plugins: [
+    new Dotenv(),
     new webpack.DefinePlugin({
       global: "window"
     }),
@@ -112,8 +115,6 @@ if (process.env.HMR === "true") {
     })
   ]);
 }
-
-console.log(process.env.HMR, "HMK================");
 
 // function transformHtml(content) {
 //   return ejs.render(content.toString(), {
