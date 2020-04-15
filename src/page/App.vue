@@ -70,6 +70,7 @@ export default {
 
 		changeBackgroundApp(unsplash) {
 			const { urls, color } = unsplash;
+
 			if (urls) {
 				document.body.style.cssText = `
           background-color: ${color || 'whitesmoke'};
