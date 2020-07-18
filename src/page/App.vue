@@ -9,7 +9,7 @@ export default {
 
 	data() {
 		return {
-			unsplash: {}
+			unsplash: {},
 		};
 	},
 
@@ -22,7 +22,7 @@ export default {
 		async initBackgroundPage() {
 			const [{ UNSPLASH_DATA }, { UNSPASH_LAST_UPDATE }] = await Promise.all([
 				this.$browser.storage.local.get('UNSPLASH_DATA'),
-				this.$browser.storage.local.get('UNSPASH_LAST_UPDATE')
+				this.$browser.storage.local.get('UNSPASH_LAST_UPDATE'),
 			]);
 
 			if (
@@ -31,13 +31,13 @@ export default {
 			) {
 				const result = await this.getRandomImages({
 					orientation: 'landscape',
-					collections: process.env.UNSPASH_COLLECTION_ID
+					collections: process.env.UNSPASH_COLLECTION_ID,
 				});
 
 				if (result.success) {
 					this.unsplash = result.data;
 					await this.$browser.storage.local.set({
-						UNSPLASH_DATA: result.data
+						UNSPLASH_DATA: result.data,
 					});
 				}
 			} else {
@@ -55,7 +55,7 @@ export default {
 				const response = await this.$axios.get(
 					'https://api.unsplash.com/photos/random',
 					{
-						params
+						params,
 					}
 				);
 
@@ -77,8 +77,8 @@ export default {
           background-image: url(${urls.regular});
         `;
 			}
-		}
-	}
+		},
+	},
 };
 </script>
 <style scoped lang="scss">
