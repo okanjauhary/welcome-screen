@@ -6,7 +6,7 @@ import './app.scss';
 Vue.config.productionTip = false;
 
 global.browser = require('webextension-polyfill');
-Vue.prototype.$browser = global.browser;
+
 Vue.prototype.$isEmpty = (data) => {
 	if (typeof data === 'undefined' || data === null) {
 		return true;
