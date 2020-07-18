@@ -1,6 +1,6 @@
 <template>
 	<div class="app-body">
-		<h1 class="center">INI DIBUAT MENGGUNAKAN VUE JS</h1>
+		<h1 class="center">INI DIBUAT MENGGUNAKAN VUE JS V2</h1>
 	</div>
 </template>
 <script>
@@ -21,8 +21,8 @@ export default {
 	methods: {
 		async initBackgroundPage() {
 			const [{ UNSPLASH_DATA }, { UNSPASH_LAST_UPDATE }] = await Promise.all([
-				this.$browser.storage.local.get('UNSPLASH_DATA'),
-				this.$browser.storage.local.get('UNSPASH_LAST_UPDATE'),
+				browser.storage.local.get('UNSPLASH_DATA'),
+				browser.storage.local.get('UNSPASH_LAST_UPDATE'),
 			]);
 
 			if (
@@ -36,7 +36,7 @@ export default {
 
 				if (result.success) {
 					this.unsplash = result.data;
-					await this.$browser.storage.local.set({
+					await browser.storage.local.set({
 						UNSPLASH_DATA: result.data,
 					});
 				}
